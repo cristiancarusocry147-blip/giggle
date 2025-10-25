@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: giggle-arbitrage-bot
+    env: python
+    plan: free
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3 arbitrage_dashboard.py"
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: CHAT_ID
+        sync: false
